@@ -18,8 +18,9 @@ public class DemoFXApplication extends Application {
     private final StackPane root = new StackPane();
     private final Scene scene = new Scene(root, 800, 600);
     private final HBox topBox = new HBox(10,
-            createDemoButton("Rings", "rings"),
+            createDemoButton("Burst", "burst"),
             createDemoButton("Concentric", "concentric"),
+            createDemoButton("Rings", "rings"),
             createDemoButton("Snow field", "snowfieldsprite")
     );
     private DemoFX demoFX;

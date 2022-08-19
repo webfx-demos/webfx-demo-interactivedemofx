@@ -14,8 +14,8 @@
     </providers>
 
     <embed-resources>
-        <!-- For Snow Field Sprite -->
-        <resource>com/chrisnewland/demofx/images/flake.png</resource>
+        <!-- For Burst -->
+        <resource>com/chrisnewland/demofx/images/star.png</resource>
         <!-- For Concentric -->
         <resource>com/chrisnewland/demofx/images/tomato.png</resource>
         <resource>com/chrisnewland/demofx/images/satsuma.png</resource>
@@ -25,6 +25,8 @@
         <resource>com/chrisnewland/demofx/images/pineapple.png</resource>
         <resource>com/chrisnewland/demofx/images/banana.png</resource>
         <resource>com/chrisnewland/demofx/images/strawberry.png</resource>
+        <!-- For Snow Field Sprite -->
+        <resource>com/chrisnewland/demofx/images/flake.png</resource>
     </embed-resources>
 
 </project>

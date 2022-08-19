@@ -30,11 +30,14 @@ public interface EmbedResourcesBundle extends ClientBundle {
     @Source("com/chrisnewland/demofx/images/satsuma.png")
     TextResource r7();
 
-    @Source("com/chrisnewland/demofx/images/strawberry.png")
+    @Source("com/chrisnewland/demofx/images/star.png")
     TextResource r8();
 
-    @Source("com/chrisnewland/demofx/images/tomato.png")
+    @Source("com/chrisnewland/demofx/images/strawberry.png")
     TextResource r9();
+
+    @Source("com/chrisnewland/demofx/images/tomato.png")
+    TextResource r10();
 
 
 
@@ -47,8 +50,9 @@ public interface EmbedResourcesBundle extends ClientBundle {
             registerResource("com/chrisnewland/demofx/images/pear.png", R.r5());
             registerResource("com/chrisnewland/demofx/images/pineapple.png", R.r6());
             registerResource("com/chrisnewland/demofx/images/satsuma.png", R.r7());
-            registerResource("com/chrisnewland/demofx/images/strawberry.png", R.r8());
-            registerResource("com/chrisnewland/demofx/images/tomato.png", R.r9());
+            registerResource("com/chrisnewland/demofx/images/star.png", R.r8());
+            registerResource("com/chrisnewland/demofx/images/strawberry.png", R.r9());
+            registerResource("com/chrisnewland/demofx/images/tomato.png", R.r10());
 
         }
     }
