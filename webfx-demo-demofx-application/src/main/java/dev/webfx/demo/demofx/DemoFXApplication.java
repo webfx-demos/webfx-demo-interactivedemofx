@@ -5,6 +5,7 @@ import com.chrisnewland.demofx.DemoFX;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,10 +20,9 @@ public class DemoFXApplication extends Application {
     private final HBox topBox = new HBox(10,
             createDemoButton("Rings", "rings"),
             createDemoButton("Concentric", "concentric"),
-            createDemoButton("Snow filed", "snowfieldsprite")
+            createDemoButton("Snow field", "snowfieldsprite")
     );
     private DemoFX demoFX;
-    private String effect;
 
     @Override
     public void start(Stage stage) {
@@ -37,6 +37,7 @@ public class DemoFXApplication extends Application {
     private Node createDemoButton(String text, String effect) {
         Button button = new Button(text);
         button.setOnAction(e -> runDemo(effect));
+        button.setCursor(Cursor.HAND);
         return button;
     }
 
@@ -47,7 +48,6 @@ public class DemoFXApplication extends Application {
         demoFX = new DemoFX(config);
         root.getChildren().setAll(demoFX.getPane(), topBox);
         demoFX.runDemo();
-        this.effect = effect;
     }
 
 }
