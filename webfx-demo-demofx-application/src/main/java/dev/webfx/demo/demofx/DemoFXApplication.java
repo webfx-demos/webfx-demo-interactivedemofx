@@ -24,9 +24,9 @@ public class DemoFXApplication extends Application {
             createDemoButton("Falling", "falling"),
             createDemoButton("Mandala", "mandala"),
             //createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), Too slow
-            // createDemoButton("More moire", "moremoire"), // Require Rotate.getMxx(), ...
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Rings", "rings"),
+            //createDemoButton("Sierpinski", "sierpinski"), // Requires ctx.fillPolygon()
             createDemoButton("Snow field", "snowfieldsprite")
     );
     private DemoFX demoFX;
