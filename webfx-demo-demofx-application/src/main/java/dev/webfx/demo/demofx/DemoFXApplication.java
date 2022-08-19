@@ -23,7 +23,8 @@ public class DemoFXApplication extends Application {
             createDemoButton("Concentric", "concentric"),
             createDemoButton("Falling", "falling"),
             createDemoButton("Mandala", "mandala"),
-            createDemoButton("Mandelbrot", "mandelbrot"),
+            //createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), Too slow
+            // createDemoButton("More moire", "moremoire"), // Require Rotate.getMxx(), ...
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Rings", "rings"),
             createDemoButton("Snow field", "snowfieldsprite")
@@ -41,16 +42,33 @@ public class DemoFXApplication extends Application {
     }
 
     private Node createDemoButton(String text, String effect) {
+        return createDemoButton(text, effect, null);
+    }
+
+    private Node createDemoButton(String text, String effect, Double maxPixels) {
         Button button = new Button(text);
-        button.setOnAction(e -> runDemo(effect));
+        button.setOnAction(e -> runDemo(effect, maxPixels));
         button.setCursor(Cursor.HAND);
         return button;
     }
 
     private void runDemo(String effect) {
+        runDemo(effect, null);
+    }
+
+    private void runDemo(String effect, Double maxPixels) {
         if (demoFX != null)
             demoFX.stopDemo();
-        DemoConfig config = DemoConfig.buildConfig("-e", effect, "-w", "" + scene.getWidth(), "-h", "" + scene.getHeight());
+        double width = scene.getWidth();
+        double height = scene.getHeight();
+        if (maxPixels != null) {
+            double r = Math.sqrt(width * height / maxPixels);
+            if (r > 1) {
+                width /= r;
+                height /= r;
+            }
+        }
+        DemoConfig config = DemoConfig.buildConfig("-e", effect, "-w", "" + width, "-h", "" + height);
         demoFX = new DemoFX(config);
         root.getChildren().setAll(demoFX.getPane(), topBox);
         demoFX.runDemo();
