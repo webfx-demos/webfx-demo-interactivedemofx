@@ -19,6 +19,7 @@ public class DemoFXApplication extends Application {
     private final Scene scene = new Scene(root, 800, 600);
     private final HBox topBox = new HBox(10,
             createDemoButton("Burst", "burst"),
+            createDemoButton("Chord", "chord"),
             createDemoButton("Concentric", "concentric"),
             createDemoButton("Rings", "rings"),
             createDemoButton("Snow field", "snowfieldsprite")
