@@ -21,6 +21,7 @@ public class DemoFXApplication extends Application {
             createDemoButton("Burst", "burst"),
             createDemoButton("Chord", "chord"),
             createDemoButton("Concentric", "concentric"),
+            createDemoButton("Falling", "falling"),
             createDemoButton("Rings", "rings"),
             createDemoButton("Snow field", "snowfieldsprite")
     );
