@@ -28,6 +28,7 @@ public class DemoFXApplication extends Application {
             createDemoButton("Rings", "rings"),
             createDemoButton("Sine lines", "sinelines"),
             //createDemoButton("Sierpinski", "sierpinski"), // Requires ctx.fillPolygon()
+            createDemoButton("Tiles", "tiles"),
             createDemoButton("Snow field", "snowfieldsprite")
     );
     private DemoFX demoFX;
