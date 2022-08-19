@@ -26,6 +26,7 @@ public class DemoFXApplication extends Application {
             //createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), Too slow
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Rings", "rings"),
+            createDemoButton("Sine lines", "sinelines"),
             //createDemoButton("Sierpinski", "sierpinski"), // Requires ctx.fillPolygon()
             createDemoButton("Snow field", "snowfieldsprite")
     );
