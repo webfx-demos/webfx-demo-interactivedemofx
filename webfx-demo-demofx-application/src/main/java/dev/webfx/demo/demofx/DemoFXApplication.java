@@ -23,6 +23,7 @@ public class DemoFXApplication extends Application {
             createDemoButton("Concentric", "concentric"),
             createDemoButton("Falling", "falling"),
             createDemoButton("Mandala", "mandala"),
+            createDemoButton("Mandelbrot", "mandelbrot"),
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Rings", "rings"),
             createDemoButton("Snow field", "snowfieldsprite")
