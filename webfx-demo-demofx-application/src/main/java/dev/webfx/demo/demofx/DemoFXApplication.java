@@ -36,6 +36,7 @@ public class DemoFXApplication extends Application {
             createDemoButton("Honeycomb", "honeycomb"),
             createDemoButton("Mandala", "mandala"),
             createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), // Limit size, otherwise too slow
+            createDemoButton("Moire", "moire"),
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Grid", "grid"),
             createDemoButton("Rings", "rings"),
