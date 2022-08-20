@@ -40,8 +40,9 @@ public class DemoFXApplication extends Application {
             createDemoButton("Sine lines", "sinelines"),
             createDemoButton("Stars", "stars"),
             createDemoButton("Sierpinski", "sierpinski"),
-            createDemoButton("Tiles", "tiles"),
-            createDemoButton("Snow field", "snowfieldsprite")
+            createDemoButton("Snow field", "snowfieldsprite"),
+            createDemoButton("Star field", "starfieldsprite"),
+            createDemoButton("Tiles", "tiles")
     );
     private DemoFX demoFX;
 
