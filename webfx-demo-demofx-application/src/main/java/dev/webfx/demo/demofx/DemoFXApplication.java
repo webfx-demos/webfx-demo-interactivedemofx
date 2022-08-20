@@ -41,6 +41,7 @@ public class DemoFXApplication extends Application {
             createDemoButton("Rings", "rings"),
             createDemoButton("Sea", "sea"),
             createDemoButton("Sine lines", "sinelines"),
+            createDemoButton("Spin", "spin"),
             createDemoButton("Stars", "stars"),
             createDemoButton("Sierpinski", "sierpinski"),
             createDemoButton("Snow field", "snowfieldsprite"),
