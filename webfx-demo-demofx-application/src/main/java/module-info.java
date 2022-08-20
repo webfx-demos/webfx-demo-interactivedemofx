@@ -3,8 +3,8 @@
 module webfx.demo.demofx.application {
 
     // Direct dependencies modules
-    requires javafx.controls;
     requires javafx.graphics;
+    requires webfx.extras.flexbox;
     requires webfx.lib.demofx;
 
     // Exported packages

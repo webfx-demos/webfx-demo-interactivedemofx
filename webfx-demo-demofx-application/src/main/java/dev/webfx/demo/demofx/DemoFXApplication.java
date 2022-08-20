@@ -2,29 +2,40 @@ package dev.webfx.demo.demofx;
 
 import com.chrisnewland.demofx.DemoConfig;
 import com.chrisnewland.demofx.DemoFX;
+import dev.webfx.extras.flexbox.FlexBox;
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class DemoFXApplication extends Application {
 
     private final StackPane root = new StackPane();
     private final Scene scene = new Scene(root, 800, 600);
-    private final HBox topBox = new HBox(10,
+
+    private final static Font BUTTON_FONT = Font.font(18);
+    private final static Insets BUTTON_PADDING = new Insets(5);
+    private Color buttonColor = Color.PURPLE; // Initial node color
+
+    private final FlexBox topBox = new FlexBox(10, 10,
             createDemoButton("Burst", "burst"),
             createDemoButton("Chord", "chord"),
+            createDemoButton("Checkerboard", "checkerboard"),
             createDemoButton("Concentric", "concentric"),
             createDemoButton("Falling", "falling"),
             createDemoButton("Mandala", "mandala"),
             createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), // Limit size, otherwise too slow
             createDemoButton("Glow board", "glowboard"),
+            createDemoButton("Grid", "grid"),
             createDemoButton("Rings", "rings"),
             createDemoButton("Sine lines", "sinelines"),
             createDemoButton("Stars", "stars"),
@@ -36,7 +47,9 @@ public class DemoFXApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-        topBox.setAlignment(Pos.TOP_CENTER);
+        topBox.setSpaceTop(true);
+        topBox.setSpaceLeft(true);
+        topBox.setSpaceRight(true);
         StackPane.setMargin(topBox, new Insets(10));
         stage.setTitle("DemoFX");
         stage.setScene(scene);
@@ -49,8 +62,14 @@ public class DemoFXApplication extends Application {
     }
 
     private Node createDemoButton(String text, String effect, Double maxPixels) {
-        Button button = new Button(text);
-        button.setOnAction(e -> runDemo(effect, maxPixels));
+        Text buttonText = new Text(text);
+        buttonText.setFont(BUTTON_FONT);
+        buttonText.setFill(Color.WHITE);
+        StackPane.setMargin(buttonText, BUTTON_PADDING);
+        StackPane button = setBackgroundColor(buttonColor, new StackPane(buttonText));
+        // Rotating color for next node
+        buttonColor = buttonColor.deriveColor(20, 1d, 1d, 1d);
+        button.setOnMouseClicked(e -> runDemo(effect, maxPixels));
         button.setCursor(Cursor.HAND);
         return button;
     }
@@ -75,6 +94,11 @@ public class DemoFXApplication extends Application {
         demoFX = new DemoFX(config);
         root.getChildren().setAll(demoFX.getPane(), topBox);
         demoFX.runDemo();
+    }
+
+    private static <R extends Region> R setBackgroundColor(Color color, R region) {
+        region.setBackground(new Background(new BackgroundFill(color, null, null)));
+        return region;
     }
 
 }
