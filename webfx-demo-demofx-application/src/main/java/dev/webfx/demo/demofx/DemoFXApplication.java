@@ -32,6 +32,7 @@ public class DemoFXApplication extends Application {
             createDemoButton("Checkerboard", "checkerboard"),
             createDemoButton("Concentric", "concentric"),
             createDemoButton("Falling", "falling"),
+            createDemoButton("Fractal rings", "fractalrings"),
             createDemoButton("Honeycomb", "honeycomb"),
             createDemoButton("Mandala", "mandala"),
             createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), // Limit size, otherwise too slow
@@ -43,7 +44,8 @@ public class DemoFXApplication extends Application {
             createDemoButton("Sierpinski", "sierpinski"),
             createDemoButton("Snow field", "snowfieldsprite"),
             createDemoButton("Star field", "starfieldsprite"),
-            createDemoButton("Tiles", "tiles")
+            createDemoButton("Tiles", "tiles"),
+            createDemoButton("Stop", null)
     );
     private DemoFX demoFX;
 
@@ -83,6 +85,8 @@ public class DemoFXApplication extends Application {
     private void runDemo(String effect, Double maxPixels) {
         if (demoFX != null)
             demoFX.stopDemo();
+        if (effect == null)
+            return;
         double width = scene.getWidth();
         double height = scene.getHeight();
         if (maxPixels != null) {
