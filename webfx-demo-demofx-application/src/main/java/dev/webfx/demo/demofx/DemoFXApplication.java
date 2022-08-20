@@ -23,11 +23,12 @@ public class DemoFXApplication extends Application {
             createDemoButton("Concentric", "concentric"),
             createDemoButton("Falling", "falling"),
             createDemoButton("Mandala", "mandala"),
-            //createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), Too slow
+            createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), // Limit size, otherwise too slow
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Rings", "rings"),
             createDemoButton("Sine lines", "sinelines"),
-            //createDemoButton("Sierpinski", "sierpinski"), // Requires ctx.fillPolygon()
+            createDemoButton("Stars", "stars"),
+            createDemoButton("Sierpinski", "sierpinski"),
             createDemoButton("Tiles", "tiles"),
             createDemoButton("Snow field", "snowfieldsprite")
     );

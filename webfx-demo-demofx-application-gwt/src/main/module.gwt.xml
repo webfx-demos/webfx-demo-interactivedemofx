@@ -117,10 +117,15 @@
     <source path="com/chrisnewland/demofx/effect"/>
     <source path="com/chrisnewland/demofx/effect/effectfactory"/>
     <source path="com/chrisnewland/demofx/effect/fake3d"/>
+    <source path="com/chrisnewland/demofx/effect/fractal"/>
+    <source path="com/chrisnewland/demofx/effect/shape"/>
     <source path="com/chrisnewland/demofx/effect/spectral"/>
+    <source path="com/chrisnewland/demofx/effect/sprite"/>
     <source path="com/chrisnewland/demofx/util"/>
     <resource path="com/chrisnewland/demofx/images"/>
     <public includes="com/chrisnewland/demofx/images/" path=""/>
+    <resource path="com/chrisnewland/demofx/images/letters"/>
+    <public includes="com/chrisnewland/demofx/images/letters/" path=""/>
     <!--==============================< webfx-platform-boot >===============================-->
     <source path="dev/webfx/platform/boot"/>
     <source path="dev/webfx/platform/boot/spi"/>
