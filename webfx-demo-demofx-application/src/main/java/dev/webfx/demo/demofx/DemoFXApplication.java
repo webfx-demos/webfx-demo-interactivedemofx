@@ -39,6 +39,7 @@ public class DemoFXApplication extends Application {
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Grid", "grid"),
             createDemoButton("Rings", "rings"),
+            createDemoButton("Sea", "sea"),
             createDemoButton("Sine lines", "sinelines"),
             createDemoButton("Stars", "stars"),
             createDemoButton("Sierpinski", "sierpinski"),
