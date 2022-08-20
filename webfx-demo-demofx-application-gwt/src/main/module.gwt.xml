@@ -123,6 +123,7 @@
     <source path="com/chrisnewland/demofx/effect/shape"/>
     <source path="com/chrisnewland/demofx/effect/spectral"/>
     <source path="com/chrisnewland/demofx/effect/sprite"/>
+    <source path="com/chrisnewland/demofx/effect/text"/>
     <source path="com/chrisnewland/demofx/util"/>
     <resource path="com/chrisnewland/demofx/images"/>
     <public includes="com/chrisnewland/demofx/images/" path=""/>
