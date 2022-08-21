@@ -50,6 +50,7 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Star field", "starfieldsprite"),
             createDemoButton("Text ring", "textring"),
             createDemoButton("Text wave", "textwave"),
+            createDemoButton("Text wave sprite", "textwavesprite"),
             createDemoButton("Tiles", "tiles"),
             createDemoButton("Word search", "wordsearch"),
             createDemoButton("Stop", null)
@@ -65,7 +66,7 @@ public class DemoFXKitchenSinkApplication extends Application {
         stage.setTitle("DemoFX Kitchen Sink");
         stage.setScene(scene);
         stage.show();
-        runDemo("concentric");
+        runDemo("textwavesprite");
     }
 
     private Node createDemoButton(String text, String effect) {
