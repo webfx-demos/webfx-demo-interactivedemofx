@@ -49,7 +49,9 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Snow field", "snowfieldsprite"),
             createDemoButton("Star field", "starfieldsprite"),
             createDemoButton("Text ring", "textring"),
+            createDemoButton("Text wave", "textwave"),
             createDemoButton("Tiles", "tiles"),
+            createDemoButton("Word search", "wordsearch"),
             createDemoButton("Stop", null)
     );
     private DemoFX demoFX;
