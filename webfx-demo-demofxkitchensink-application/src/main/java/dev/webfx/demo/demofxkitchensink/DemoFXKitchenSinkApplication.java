@@ -34,7 +34,7 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Fractal rings", "fractalrings"),
             createDemoButton("Honeycomb", "honeycomb"),
             createDemoButton("Mandala", "mandala"),
-            createDemoButton("Mandelbrot", "mandelbrot", 800d * 600), // Limit size, otherwise too slow
+            createDemoButton("Mandelbrot", "mandelbrot"),
             createDemoButton("Moire", "moire"),
             createDemoButton("Moremoire", "moremoire"), // too slow to start
             createDemoButton("Glow board", "glowboard"),
