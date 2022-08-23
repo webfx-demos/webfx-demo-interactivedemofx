@@ -8,10 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -25,6 +22,8 @@ public class DemoFXKitchenSinkApplication extends Application {
     private final static Font BUTTON_FONT = Font.font(18);
     private final static Insets BUTTON_PADDING = new Insets(5);
     private Color buttonColor = Color.PURPLE; // Initial node color
+
+    private boolean showButtons = true;
 
     private final FlexBox topBox = new FlexBox(10, 10,
             createDemoButton("Burst", "burst"),
@@ -53,9 +52,10 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Text wave sprite", "textwavesprite"),
             createDemoButton("Tiles", "tiles"),
             createDemoButton("Word search", "wordsearch"),
-            createDemoButton("Stop", null)
+            createDemoButton("Hide", null)
     );
     private DemoFX demoFX;
+    private BorderPane demoPane;
 
     @Override
     public void start(Stage stage) {
@@ -67,6 +67,7 @@ public class DemoFXKitchenSinkApplication extends Application {
         stage.setScene(scene);
         stage.show();
         runDemo("textwavesprite");
+        root.setOnMouseClicked(e -> showButtons());
     }
 
     private Node createDemoButton(String text, String effect) {
@@ -81,7 +82,10 @@ public class DemoFXKitchenSinkApplication extends Application {
         StackPane button = setBackgroundColor(buttonColor, new StackPane(buttonText));
         // Rotating color for next node
         buttonColor = buttonColor.deriveColor(20, 1d, 1d, 1d);
-        button.setOnMouseClicked(e -> runDemo(effect, maxPixels));
+        button.setOnMouseClicked(e -> {
+            runDemo(effect, maxPixels);
+            e.consume();
+        });
         button.setCursor(Cursor.HAND);
         return button;
     }
@@ -91,23 +95,48 @@ public class DemoFXKitchenSinkApplication extends Application {
     }
 
     private void runDemo(String effect, Double maxPixels) {
-        if (demoFX != null)
-            demoFX.stopDemo();
-        if (effect == null)
-            return;
-        double width = scene.getWidth();
-        double height = scene.getHeight();
-        if (maxPixels != null) {
-            double r = Math.sqrt(width * height / maxPixels);
-            if (r > 1) {
-                width /= r;
-                height /= r;
+        if (effect == null) // Hide
+            hideButtons();
+        else { // New demo
+            if (demoFX != null)
+                demoFX.stopDemo();
+            double width = scene.getWidth();
+            double height = scene.getHeight();
+            if (maxPixels != null) {
+                double r = Math.sqrt(width * height / maxPixels);
+                if (r > 1) {
+                    width /= r;
+                    height /= r;
+                }
             }
+            DemoConfig config = DemoConfig.buildConfig("-e", effect, "-w", "" + width, "-h", "" + height);
+            demoFX = new DemoFX(config);
+            demoPane = demoFX.getPane();
+            updateRootContent();
+            demoFX.runDemo();
         }
-        DemoConfig config = DemoConfig.buildConfig("-e", effect, "-w", "" + width, "-h", "" + height);
-        demoFX = new DemoFX(config);
-        root.getChildren().setAll(demoFX.getPane(), topBox);
-        demoFX.runDemo();
+    }
+
+    private void updateRootContent() {
+        if (showButtons)
+            root.getChildren().setAll(demoPane, topBox);
+        else
+            root.getChildren().setAll(demoPane);
+        root.setCursor(showButtons ? Cursor.DEFAULT : Cursor.HAND);
+    }
+
+    private void showButtons() {
+        if (!showButtons) {
+            showButtons = true;
+            updateRootContent();
+        }
+    }
+
+    private void hideButtons() {
+        if (showButtons) {
+            showButtons = false;
+            updateRootContent();
+        }
     }
 
     private static <R extends Region> R setBackgroundColor(Color color, R region) {
