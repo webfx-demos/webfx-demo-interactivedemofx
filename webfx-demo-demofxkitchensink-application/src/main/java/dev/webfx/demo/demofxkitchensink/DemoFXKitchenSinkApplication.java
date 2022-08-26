@@ -47,6 +47,7 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Sierpinski", "sierpinski"),
             createDemoButton("Snow field", "snowfieldsprite"),
             createDemoButton("Star field", "starfieldsprite"),
+            createDemoButton("Text flash", "textflash"),
             createDemoButton("Text ring", "textring"),
             //createDemoButton("Text wave", "textwave"), // to slow to start
             createDemoButton("Text wave sprite", "textwavesprite"),
