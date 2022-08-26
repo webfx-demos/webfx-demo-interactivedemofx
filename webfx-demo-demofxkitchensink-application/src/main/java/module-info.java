@@ -4,6 +4,7 @@ module webfx.demo.demofxkitchensink.application {
 
     // Direct dependencies modules
     requires javafx.graphics;
+    requires javafx.media;
     requires webfx.extras.flexbox;
     requires webfx.lib.demofx;
 
