@@ -30,6 +30,7 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Chord", "chord"),
             createDemoButton("Checkerboard", "checkerboard"),
             createDemoButton("Concentric", "concentric"),
+            createDemoButton("Equaliser", "equaliser", "https://cdn.pixabay.com/download/audio/2022/03/15/audio_8cb749d484.mp3?filename=happy-ukulele-fun-positive-comedy-glockenspiel-music-93694.mp3"),
             createDemoButton("Falling", "falling"),
             createDemoButton("Fractal rings", "fractalrings"),
             createDemoButton("Honeycomb", "honeycomb"),
@@ -75,7 +76,7 @@ public class DemoFXKitchenSinkApplication extends Application {
         return createDemoButton(text, effect, null);
     }
 
-    private Node createDemoButton(String text, String effect, Double maxPixels) {
+    private Node createDemoButton(String text, String effect, String audioUrl) {
         Text buttonText = new Text(text);
         buttonText.setFont(BUTTON_FONT);
         buttonText.setFill(Color.WHITE);
@@ -84,7 +85,7 @@ public class DemoFXKitchenSinkApplication extends Application {
         // Rotating color for next node
         buttonColor = buttonColor.deriveColor(20, 1d, 1d, 1d);
         button.setOnMouseClicked(e -> {
-            runDemo(effect, maxPixels);
+            runDemo(effect, audioUrl);
             e.consume();
         });
         button.setCursor(Cursor.HAND);
@@ -95,22 +96,13 @@ public class DemoFXKitchenSinkApplication extends Application {
         runDemo(effect, null);
     }
 
-    private void runDemo(String effect, Double maxPixels) {
+    private void runDemo(String effect, String audioUrl) {
         if (effect == null) // Hide
             hideButtons();
         else { // New demo
             if (demoFX != null)
                 demoFX.stopDemo();
-            double width = scene.getWidth();
-            double height = scene.getHeight();
-            if (maxPixels != null) {
-                double r = Math.sqrt(width * height / maxPixels);
-                if (r > 1) {
-                    width /= r;
-                    height /= r;
-                }
-            }
-            DemoConfig config = DemoConfig.buildConfig("-e", effect, "-w", "" + width, "-h", "" + height);
+            DemoConfig config = audioUrl == null ? DemoConfig.buildConfig("-e", effect, "-w", "" + scene.getWidth(), "-h", "" + scene.getHeight()) : DemoConfig.buildConfig("-e", effect, "-a", audioUrl, "-w", "" + scene.getWidth(), "-h", "" + scene.getHeight());
             demoFX = new DemoFX(config);
             demoPane = demoFX.getPane();
             updateRootContent();
