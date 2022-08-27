@@ -84,7 +84,7 @@ public class DemoFXKitchenSinkApplication extends Application {
         StackPane button = setBackgroundColor(buttonColor, new StackPane(buttonText));
         // Rotating color for next node
         buttonColor = buttonColor.deriveColor(20, 1d, 1d, 1d);
-        button.setOnMouseClicked(e -> {
+        button.setOnMousePressed(e -> {
             runDemo(effect, audioUrl);
             e.consume();
         });
