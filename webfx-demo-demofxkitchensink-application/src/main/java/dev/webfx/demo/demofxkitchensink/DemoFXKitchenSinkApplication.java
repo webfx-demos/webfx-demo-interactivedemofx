@@ -31,14 +31,15 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Chord", "chord"),
             createDemoButton("Checkerboard", "checkerboard"),
             createDemoButton("Concentric", "concentric"),
-            createDemoButton("Equaliser", "equaliser", "https://cdn.pixabay.com/download/audio/2022/03/15/audio_8cb749d484.mp3?filename=happy-ukulele-fun-positive-comedy-glockenspiel-music-93694.mp3"),
+            createDemoButton("Equaliser ♪", "equaliser", "https://cdn.pixabay.com/download/audio/2022/03/15/audio_8cb749d484.mp3?filename=happy-ukulele-fun-positive-comedy-glockenspiel-music-93694.mp3"),
             createDemoButton("Falling", "falling"),
             createDemoButton("Fractal rings", "fractalrings"),
             createDemoButton("Honeycomb", "honeycomb"),
             createDemoButton("Mandala", "mandala"),
             createDemoButton("Mandelbrot", "mandelbrot"),
             createDemoButton("Moire", "moire"),
-            createDemoButton("Moremoire", "moremoire"), // too slow to start
+            createDemoButton("Moire 2", "moire2"),
+            //createDemoButton("Moremoire", "moremoire"), // too slow to start
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Grid", "grid"),
             createDemoButton("Rings", "rings"),
@@ -85,10 +86,13 @@ public class DemoFXKitchenSinkApplication extends Application {
         StackPane button = setBackgroundColor(buttonColor, new StackPane(buttonText));
         // Rotating color for next node
         buttonColor = buttonColor.deriveColor(20, 1d, 1d, 1d);
-        button.setOnMousePressed(e -> {
-            runDemo(effect, audioUrl);
-            e.consume();
-        });
+        if (effect != null)
+            button.setOnMousePressed(e -> {
+                runDemo(effect, audioUrl);
+                e.consume();
+            });
+        else
+            button.setOnMouseClicked(e -> hideButtons());
         button.setCursor(Cursor.HAND);
         return button;
     }
@@ -98,17 +102,13 @@ public class DemoFXKitchenSinkApplication extends Application {
     }
 
     private void runDemo(String effect, String audioUrl) {
-        if (effect == null) // Hide
-            hideButtons();
-        else { // New demo
-            if (demoFX != null)
-                demoFX.stopDemo();
-            DemoConfig config = audioUrl == null ? DemoConfig.buildConfig("-e", effect, "-w", "" + scene.getWidth(), "-h", "" + scene.getHeight()) : DemoConfig.buildConfig("-e", effect, "-a", audioUrl, "-w", "" + scene.getWidth(), "-h", "" + scene.getHeight());
-            demoFX = new DemoFX(config);
-            demoPane = demoFX.getPane();
-            updateRootContent();
-            demoFX.runDemo();
-        }
+        if (demoFX != null)
+            demoFX.stopDemo();
+        DemoConfig config = audioUrl == null ? DemoConfig.buildConfig("-e", effect, "-w", "" + scene.getWidth(), "-h", "" + scene.getHeight()) : DemoConfig.buildConfig("-e", effect, "-a", audioUrl, "-w", "" + scene.getWidth(), "-h", "" + scene.getHeight());
+        demoFX = new DemoFX(config);
+        demoPane = demoFX.getPane();
+        updateRootContent();
+        demoFX.runDemo();
     }
 
     private void updateRootContent() {
