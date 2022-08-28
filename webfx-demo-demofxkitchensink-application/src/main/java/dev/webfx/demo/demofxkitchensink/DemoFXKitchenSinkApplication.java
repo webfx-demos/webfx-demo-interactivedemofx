@@ -26,6 +26,7 @@ public class DemoFXKitchenSinkApplication extends Application {
     private boolean showButtons = true;
 
     private final FlexBox topBox = new FlexBox(10, 10,
+            createDemoButton("Bobs", "bobs"),
             createDemoButton("Burst", "burst"),
             createDemoButton("Chord", "chord"),
             createDemoButton("Checkerboard", "checkerboard"),
