@@ -2,12 +2,15 @@ package dev.webfx.demo.demofxkitchensink;
 
 import com.chrisnewland.demofx.DemoConfig;
 import com.chrisnewland.demofx.DemoFX;
+import com.chrisnewland.demofx.util.ImageUtil;
 import dev.webfx.extras.flexbox.FlexBox;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -37,11 +40,13 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Honeycomb", "honeycomb"),
             createDemoButton("Mandala", "mandala"),
             createDemoButton("Mandelbrot", "mandelbrot"),
+            createDemoButton("Mask stack", "maskstack"),
             createDemoButton("Moire", "moire"),
             createDemoButton("Moire 2", "moire2"),
             //createDemoButton("Moremoire", "moremoire"), // too slow to start
             createDemoButton("Glow board", "glowboard"),
             createDemoButton("Grid", "grid"),
+            //createDemoButton("Rainbow", "rainbow"), // Performance problem with PixelWrite.setPixels()
             createDemoButton("Rings", "rings"),
             createDemoButton("Sea", "sea"),
             createDemoButton("Sine lines", "sinelines"),
@@ -55,6 +60,7 @@ public class DemoFXKitchenSinkApplication extends Application {
             //createDemoButton("Text wave", "textwave"), // to slow to start
             createDemoButton("Text wave sprite", "textwavesprite"),
             createDemoButton("Tiles", "tiles"),
+            createDemoButton("Twister", "twister"),
             createDemoButton("Word search", "wordsearch"),
             createDemoButton("Hide", null)
     );
@@ -72,6 +78,8 @@ public class DemoFXKitchenSinkApplication extends Application {
         stage.show();
         runDemo("textwavesprite");
         root.setOnMouseClicked(e -> showButtons());
+        GraphicsContext loadingContext = new Canvas().getGraphicsContext2D();
+        loadingContext.drawImage(ImageUtil.loadImageFromResources("tiger.jpeg"), 0, 0);
     }
 
     private Node createDemoButton(String text, String effect) {
