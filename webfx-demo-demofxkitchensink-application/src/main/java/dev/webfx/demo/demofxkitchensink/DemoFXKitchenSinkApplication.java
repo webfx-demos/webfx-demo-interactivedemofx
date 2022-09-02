@@ -34,6 +34,7 @@ public class DemoFXKitchenSinkApplication extends Application {
             createDemoButton("Chord", "chord"),
             createDemoButton("Checkerboard", "checkerboard"),
             createDemoButton("Concentric", "concentric"),
+            createDemoButton("Credits", "credits"),
             createDemoButton("Equaliser ♪", "equaliser", "https://cdn.pixabay.com/download/audio/2022/03/15/audio_8cb749d484.mp3?filename=happy-ukulele-fun-positive-comedy-glockenspiel-music-93694.mp3"),
             createDemoButton("Falling", "falling"),
             createDemoButton("Fractal rings", "fractalrings"),

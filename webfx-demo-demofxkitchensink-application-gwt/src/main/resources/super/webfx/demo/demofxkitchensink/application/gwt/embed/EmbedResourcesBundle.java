@@ -39,6 +39,9 @@ public interface EmbedResourcesBundle extends ClientBundle {
     @Source("com/chrisnewland/demofx/images/tomato.png")
     TextResource r10();
 
+    @Source("com/chrisnewland/demofx/text/greetings.txt")
+    TextResource r11();
+
 
 
     final class ProvidedGwtResourceBundle extends GwtResourceBundleBase {
@@ -53,6 +56,7 @@ public interface EmbedResourcesBundle extends ClientBundle {
             registerResource("com/chrisnewland/demofx/images/star.png", R.r8());
             registerResource("com/chrisnewland/demofx/images/strawberry.png", R.r9());
             registerResource("com/chrisnewland/demofx/images/tomato.png", R.r10());
+            registerResource("com/chrisnewland/demofx/text/greetings.txt", R.r11());
 
         }
     }
