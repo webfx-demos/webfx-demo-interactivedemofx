@@ -2,15 +2,12 @@ package dev.webfx.demo.demofxkitchensink;
 
 import com.chrisnewland.demofx.DemoConfig;
 import com.chrisnewland.demofx.DemoFX;
-import com.chrisnewland.demofx.util.ImageUtil;
 import dev.webfx.extras.flexbox.FlexBox;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -79,8 +76,6 @@ public class DemoFXKitchenSinkApplication extends Application {
         stage.show();
         runDemo("textwavesprite");
         root.setOnMouseClicked(e -> showButtons());
-        GraphicsContext loadingContext = new Canvas().getGraphicsContext2D();
-        loadingContext.drawImage(ImageUtil.loadImageFromResources("tiger.jpeg"), 0, 0);
     }
 
     private Node createDemoButton(String text, String effect) {
