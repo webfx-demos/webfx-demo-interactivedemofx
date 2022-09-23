@@ -96,7 +96,10 @@ public class DemoFXKitchenSinkApplication extends Application {
                 e.consume();
             });
         else
-            button.setOnMouseClicked(e -> hideButtons());
+            button.setOnMouseClicked(e -> {
+                hideButtons();
+                e.consume();
+            });
         button.setCursor(Cursor.HAND);
         return button;
     }
