@@ -91,7 +91,7 @@ public class DemoFXKitchenSinkApplication extends Application {
         // Rotating color for next node
         buttonColor = buttonColor.deriveColor(20, 1d, 1d, 1d);
         if (effect != null)
-            button.setOnMousePressed(e -> {
+            button.setOnMouseClicked(e -> {
                 runDemo(effect, audioUrl);
                 e.consume();
             });
