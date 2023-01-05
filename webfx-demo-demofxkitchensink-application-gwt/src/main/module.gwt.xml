@@ -85,8 +85,6 @@
     <source path="dev/webfx/demo/demofxkitchensink"/>
     <!--==============================< webfx-extras-flexbox >==============================-->
     <source path="dev/webfx/extras/flexbox"/>
-    <!--============================< webfx-extras-imagestore >=============================-->
-    <source path="dev/webfx/extras/imagestore"/>
     <!--=================================< webfx-kit-gwt >==================================-->
     <source path="dev/webfx/kit/launcher/spi/impl/gwt"/>
     <source path="dev/webfx/kit/mapper/spi/impl/gwt"/>
@@ -111,6 +109,8 @@
     <source path="dev/webfx/kit/registry/javafxgraphics"/>
     <!--========================< webfx-kit-javafxmedia-peers-gwt >=========================-->
     <source path="dev/webfx/kit/mapper/peers/javafxmedia/spi/gwt"/>
+    <!--=======================< webfx-kit-javafxmedia-registry-gwt >=======================-->
+    <source path="dev/webfx/kit/registry/javafxmedia"/>
     <!--===============================< webfx-kit-launcher >===============================-->
     <source path="dev/webfx/kit/launcher"/>
     <source path="dev/webfx/kit/launcher/spi"/>
@@ -152,6 +152,8 @@
     <source path="emul/java/lang/ref"/>
     <source path="emul/java/util"/>
     <source path="emul/java/util/regex"/>
+    <!--==============================< webfx-platform-meta >===============================-->
+    <source path="dev/webfx/platform/meta"/>
     <!--============================< webfx-platform-resource >=============================-->
     <source path="dev/webfx/platform/resource"/>
     <source path="dev/webfx/platform/resource/spi"/>
@@ -176,7 +178,7 @@
     <source path="dev/webfx/platform/util"/>
     <source path="dev/webfx/platform/util/collection"/>
     <source path="dev/webfx/platform/util/function"/>
-    <source path="dev/webfx/platform/util/noreflect"/>
+    <source path="dev/webfx/platform/util/keyobject"/>
     <source path="dev/webfx/platform/util/serviceloader"/>
     <source path="dev/webfx/platform/util/tuples"/>
     <source path="dev/webfx/platform/util/uuid"/>

@@ -1,6 +1,6 @@
 // File managed by WebFX (DO NOT EDIT MANUALLY)
 
-module webfx.demo.demofxkitchensink.application.openjfx {
+module webfx.demo.demofxkitchensink.application.gluon {
 
     // Direct dependencies modules
     requires javafx.media;
@@ -10,7 +10,7 @@ module webfx.demo.demofxkitchensink.application.openjfx {
     requires webfx.platform.console.java;
     requires webfx.platform.resource.java;
     requires webfx.platform.scheduler.java;
-    requires webfx.platform.shutdown.java;
+    requires webfx.platform.shutdown.gluon;
 
     // Meta Resource package
     opens dev.webfx.platform.meta.exe;

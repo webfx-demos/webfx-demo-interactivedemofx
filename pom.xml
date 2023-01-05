@@ -33,6 +33,7 @@
 
     <modules>
         <module>webfx-demo-demofxkitchensink-application</module>
+        <module>webfx-demo-demofxkitchensink-application-gluon</module>
         <module>webfx-demo-demofxkitchensink-application-gwt</module>
         <module>webfx-demo-demofxkitchensink-application-openjfx</module>
     </modules>

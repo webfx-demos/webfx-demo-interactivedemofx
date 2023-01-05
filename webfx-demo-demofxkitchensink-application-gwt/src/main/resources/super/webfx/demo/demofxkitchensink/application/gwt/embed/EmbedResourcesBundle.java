@@ -42,6 +42,9 @@ public interface EmbedResourcesBundle extends ClientBundle {
     @Source("com/chrisnewland/demofx/text/greetings.txt")
     TextResource r11();
 
+    @Source("dev/webfx/platform/meta/exe/exe.properties")
+    TextResource r12();
+
 
 
     final class ProvidedGwtResourceBundle extends GwtResourceBundleBase {
@@ -57,6 +60,7 @@ public interface EmbedResourcesBundle extends ClientBundle {
             registerResource("com/chrisnewland/demofx/images/strawberry.png", R.r9());
             registerResource("com/chrisnewland/demofx/images/tomato.png", R.r10());
             registerResource("com/chrisnewland/demofx/text/greetings.txt", R.r11());
+            registerResource("dev/webfx/platform/meta/exe/exe.properties", R.r12());
 
         }
     }
