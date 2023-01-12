@@ -7,9 +7,15 @@ module webfx.demo.demofxkitchensink.application {
     requires javafx.media;
     requires webfx.extras.flexbox;
     requires webfx.lib.demofx;
+    requires webfx.platform.audio;
+    requires webfx.platform.resource;
+    requires webfx.platform.util;
 
     // Exported packages
     exports dev.webfx.demo.demofxkitchensink;
+
+    // Resources packages
+    opens dev.webfx.demo.demofxkitchensink;
 
     // Provided services
     provides javafx.application.Application with dev.webfx.demo.demofxkitchensink.DemoFXKitchenSinkApplication;
