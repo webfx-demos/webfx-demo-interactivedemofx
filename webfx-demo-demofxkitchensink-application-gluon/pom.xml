@@ -91,10 +91,12 @@
                         <list>dev/webfx/platform/meta/exe/[^/]+$</list>
                         <list>images/checkbox/[^/]+$</list>
                     </resourcesList>
+                    <appIdentifier>dev.webfx.demo.demofxkitchensink</appIdentifier>
                     <releaseConfiguration>
                         <!-- Android -->
                         <appLabel>DemoFX kitchen sink</appLabel>
                     </releaseConfiguration>
+
                 </configuration>
             </plugin>
         </plugins>

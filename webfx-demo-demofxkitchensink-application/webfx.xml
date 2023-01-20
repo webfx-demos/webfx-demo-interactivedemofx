@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project applicationLabel="DemoFX kitchen sink">
+<project applicationId="dev.webfx.demo.demofxkitchensink" applicationLabel="DemoFX kitchen sink">
 
     <exported-packages>
         <source-packages/>
