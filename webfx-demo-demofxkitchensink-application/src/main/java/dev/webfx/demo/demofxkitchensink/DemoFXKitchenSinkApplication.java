@@ -3,12 +3,12 @@ package dev.webfx.demo.demofxkitchensink;
 import com.chrisnewland.demofx.DemoConfig;
 import com.chrisnewland.demofx.DemoFX;
 import dev.webfx.extras.flexbox.FlexBox;
+import dev.webfx.kit.util.scene.DeviceSceneUtil;
 import dev.webfx.platform.audio.AudioService;
 import dev.webfx.platform.resource.Resource;
 import dev.webfx.platform.util.Arrays;
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -16,7 +16,6 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class DemoFXKitchenSinkApplication extends Application {
@@ -71,14 +70,7 @@ public class DemoFXKitchenSinkApplication extends Application {
     private BorderPane demoPane;
 
     public DemoFXKitchenSinkApplication() {
-        Rectangle2D screenVisualBounds = Screen.getPrimary().getVisualBounds();
-        double sceneWidth = 800, sceneHeight = 600; // Limiting dimensions for big screens
-        // If it doesn't fit in the screen (ex: mobiles & tablets), we switch to full screen
-        if (sceneWidth > screenVisualBounds.getWidth() || sceneHeight > screenVisualBounds.getHeight()) {
-            sceneWidth = screenVisualBounds.getWidth();
-            sceneHeight = screenVisualBounds.getHeight();
-        }
-        scene = new Scene(root, sceneWidth, sceneHeight);
+        scene = DeviceSceneUtil.newScene(root, 800, 600);
         // Loading the Roboto font for demo buttons (this also ensures that the ♪ symbol will be correctly rendered)
         Font.loadFont(Resource.toUrl("Roboto-Regular.ttf", DemoFXKitchenSinkApplication.class), 18);
     }

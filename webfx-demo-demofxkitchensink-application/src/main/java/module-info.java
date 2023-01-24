@@ -6,6 +6,7 @@ module webfx.demo.demofxkitchensink.application {
     requires javafx.graphics;
     requires javafx.media;
     requires webfx.extras.flexbox;
+    requires webfx.kit.util.scene;
     requires webfx.lib.demofx;
     requires webfx.platform.audio;
     requires webfx.platform.resource;
