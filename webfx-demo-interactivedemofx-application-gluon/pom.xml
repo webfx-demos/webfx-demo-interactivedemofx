@@ -101,7 +101,7 @@
                     <appIdentifier>dev.webfx.demo.interactivedemofx</appIdentifier>
                     <releaseConfiguration>
                         <!-- Android -->
-                        <appLabel>Interactive DemoFX</appLabel>
+                        <appLabel>InteractiveDemoFX</appLabel>
                     </releaseConfiguration>
 
                 </configuration>
