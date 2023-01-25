@@ -32,7 +32,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        app: [{name: 'DemoFXKitchenSink', module-token: 'webfx-demo-demofxkitchensink', gwt-token: 'webfx_demo_demofxkitchensink', gluon-token: 'WebFXDemoDemofxkitchensink', web-push-branch: 'demofxkitchensink', android-package-name: 'dev.webfx.demo.demofxkitchensink', android-track: 'beta', ios-bundle-id: 'dev.webfx.demo.demofxkitchensink', version: '0.1.0-SNAPSHOT'}]
+        app: [{name: 'InteractiveDemoFX', module-token: 'webfx-demo-interactivedemofx', gwt-token: 'webfx_demo_interactivedemofx', gluon-token: 'WebFXDemoInteractivedemofx', web-push-branch: 'interactivedemofx', android-package-name: 'dev.webfx.demo.interactivedemofx', android-track: 'beta', ios-bundle-id: 'dev.webfx.demo.interactivedemofx', version: '0.1.0-SNAPSHOT'}]
         os-config:  [1, 2, 3, 4]
         include:
           - os-config: 1 # Generates builds 1) 2) 3) 4) & 5)

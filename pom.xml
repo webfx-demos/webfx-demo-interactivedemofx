@@ -32,10 +32,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>webfx-demo-demofxkitchensink-application</module>
-        <module>webfx-demo-demofxkitchensink-application-gluon</module>
-        <module>webfx-demo-demofxkitchensink-application-gwt</module>
-        <module>webfx-demo-demofxkitchensink-application-openjfx</module>
+        <module>webfx-demo-interactivedemofx-application</module>
+        <module>webfx-demo-interactivedemofx-application-gluon</module>
+        <module>webfx-demo-interactivedemofx-application-gwt</module>
+        <module>webfx-demo-interactivedemofx-application-openjfx</module>
     </modules>
 
 </project>
