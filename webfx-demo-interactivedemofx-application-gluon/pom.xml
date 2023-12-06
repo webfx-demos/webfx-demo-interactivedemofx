@@ -7,7 +7,7 @@
 
     <parent>
         <groupId>dev.webfx</groupId>
-        <artifactId>webfx-demo-demofxkitchensink</artifactId>
+        <artifactId>webfx-demo-interactivedemofx</artifactId>
         <version>0.1.0-SNAPSHOT</version>
     </parent>
 
@@ -96,10 +96,12 @@
                         <list>com/chrisnewland/demofx/text/[^/]+$</list>
                         <list>dev/webfx/demo/interactivedemofx/[^/]+$</list>
                         <list>dev/webfx/platform/meta/exe/[^/]+$</list>
-                        <list>images/checkbox/[^/]+$</list>
+                        <list>javafx/scene/control/skin/checkbox/[^/]+$</list>
                     </resourcesList>
                     <appIdentifier>dev.webfx.demo.interactivedemofx</appIdentifier>
                     <releaseConfiguration>
+                        <!-- macOS/iOS -->
+                        <bundleName>InteractiveDemoFX</bundleName>
                         <!-- Android -->
                         <appLabel>InteractiveDemoFX</appLabel>
                     </releaseConfiguration>

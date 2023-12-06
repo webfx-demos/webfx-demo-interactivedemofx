@@ -7,7 +7,7 @@
 
     <parent>
         <groupId>dev.webfx</groupId>
-        <artifactId>webfx-demo-demofxkitchensink</artifactId>
+        <artifactId>webfx-demo-interactivedemofx</artifactId>
         <version>0.1.0-SNAPSHOT</version>
     </parent>
 
@@ -52,12 +52,12 @@
 
         <dependency>
             <groupId>com.google.elemental2</groupId>
-            <artifactId>elemental2-svg</artifactId>
+            <artifactId>elemental2-promise</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.jresearch.gwt.time</groupId>
-            <artifactId>org.jresearch.gwt.time</artifactId>
+            <groupId>com.google.elemental2</groupId>
+            <artifactId>elemental2-svg</artifactId>
         </dependency>
 
         <dependency>
@@ -69,6 +69,11 @@
             <groupId>org.treblereel.gwt.nio</groupId>
             <artifactId>gwt-nio</artifactId>
             <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jresearch.gwt.time</groupId>
+            <artifactId>org.jresearch.gwt.time</artifactId>
         </dependency>
 
         <dependency>
